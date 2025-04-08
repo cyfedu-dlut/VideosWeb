@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>影视天堂 - 高清电影在线观看</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="dark-mode">
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="影视天堂">
+                </a>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="搜索电影、电视剧、演员...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="user-actions">
+                <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+                <a href="#" class="login-btn">登录</a>
+                <a href="#" class="register-btn">注册</a>
+                <div class="user-avatar">
+                    <img src="images/avatar.png" alt="用户头像">
+                    <div class="dropdown-menu">
+                        <a href="#">个人中心</a>
+                        <a href="#">我的收藏</a>
+                        <a href="#">观看历史</a>
+                        <a href="#">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="#">电影</a></li>
+                    <li><a href="#">电视剧</a></li>
+                    <li><a href="#">动漫</a></li>
+                    <li><a href="#">综艺</a></li>
+                    <li><a href="#">排行榜</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 轮播区域 -->
+    <section class="hero-slider">
+        <div class="slider-container">
+            <div class="slide active">
+                <div class="slide-bg" style="background-image: url('images/slider1.jpg');"></div>
+                <div class="slide-content">
+                    <h2>最新上映大片</h2>
+                    <p>2023年度最受期待科幻巨制</p>
+                    <a href="movie-detail.html" class="btn">立即观看</a>
+                </div>
+            </div>
+            <!-- 更多轮播项 -->
+        </div>
+        <div class="slider-controls">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="movie-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>热门推荐</h2>
+                <a href="#" class="view-all">查看全部 <i class="fas fa-angle-right"></i></a>
+            </div>
+            
+            <div class="movie-grid">
+                <!-- 电影卡片 -->
+                <div class="movie-card">
+                    <div class="movie-poster">
+                        <img src="images/movie1.jpg" alt="电影名称">
+                        <div class="movie-rating">9.2</div>
+                        <div class="hover-info">
+                            <a href="movie-detail.html" class="btn-play"><i class="fas fa-play"></i> 播放</a>
+                            <a href="#" class="btn-collect"><i class="fas fa-heart"></i></a>
+                        </div>
+                    </div>
+                    <div class="movie-info">
+                        <h3>电影标题</h3>
+                        <p>2023 / 动作 / 冒险</p>
+                    </div>
+                </div>
+                <!-- 更多电影卡片 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 更多电影分类区域 -->
+    <section class="movie-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>最新上映</h2>
+                <a href="#" class="view-all">查看全部 <i class="fas fa-angle-right"></i></a>
+            </div>
+            
+            <div class="movie-slider">
+                <!-- 电影卡片 -->
+                <!-- 重复上面的电影卡片结构 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo.png" alt="影视天堂">
+                    <p>您的在线观影首选平台</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>关于我们</h3>
+                        <ul>
+                            <li><a href="#">公司简介</a></li>
+                            <li><a href="#">联系我们</a></li>
+                            <li><a href="#">招聘信息</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h3>帮助中心</h3>
+                        <ul>
+                            <li><a href="#">常见问题</a></li>
+                            <li><a href="#">观影指南</a></li>
+                            <li><a href="#">意见反馈</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="link-group">
+                        <h3>法律信息</h3>
+                        <ul>
+                            <li><a href="#">用户协议</a></li>
+                            <li><a href="#">隐私政策</a></li>
+                            <li><a href="#">版权声明</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="social-media">
+                    <h3>关注我们</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                        <a href="#"><i class="fab fa-bilibili"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 影视天堂 All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

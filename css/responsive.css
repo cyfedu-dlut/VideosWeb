@@ -1,0 +1,183 @@
+/* 响应式样式 */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-slider {
+        height: 500px;
+    }
+    
+    .slide-content {
+        margin-left: 50px;
+        padding-top: 100px;
+    }
+    
+    .slide-content h2 {
+        font-size: 2.5rem;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .social-media {
+        grid-column: span 2;
+    }
+    
+    .movie-info-section {
+        flex-direction: column;
+    }
+    
+    .movie-info-section .movie-poster {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+    
+    .search-box {
+        order: 3;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+    }
+    
+    .hero-slider {
+        height: 400px;
+        margin-top: 150px;
+    }
+    
+    .slide-content {
+        margin-left: 30px;
+        padding-top: 80px;
+        max-width: 80%;
+    }
+    
+    .slide-content h2 {
+        font-size: 2rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .social-media {
+        grid-column: auto;
+    }
+    
+    .player-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .comment-form {
+        flex-direction: column;
+    }
+    
+    .comment-form .user-avatar {
+        align-self: center;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar .container {
+        padding: 10px;
+    }
+    
+    .user-actions {
+        gap: 10px;
+    }
+    
+    .login-btn, .register-btn {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .main-nav li a {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .hero-slider {
+        height: 350px;
+        margin-top: 180px;
+    }
+    
+    .slide-content {
+        margin-left: 20px;
+        padding-top: 50px;
+    }
+    
+    .slide-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content p {
+        font-size: 1rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .footer-links {
+        grid-template-columns: 1fr;
+    }
+    
+    .movie-info h1 {
+        font-size: 2rem;
+    }
+    
+    .movie-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .movie-actions .btn {
+        width: 100%;
+    }
+    
+    .player-sources {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    
+    .player-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .comment-header {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-wrap: wrap;
+    }
+}

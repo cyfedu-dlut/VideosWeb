@@ -1,0 +1,1011 @@
+/* 基础样式 */
+:root {
+    --primary-color: #e50914;
+    --secondary-color: #f5f5f5;
+    --dark-bg: #141414;
+    --darker-bg: #0b0b0b;
+    --light-text: #ffffff;
+    --gray-text: #b3b3b3;
+    --border-color: #333333;
+    --card-bg: #1f1f1f;
+    --hover-bg: #252525;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    --transition: all 0.3s ease;
+    --container-width: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-text);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+button, .btn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: var(--transition);
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover {
+    background-color: #ff0a16;
+    color: var(--light-text);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--light-text);
+    color: var(--light-text);
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 导航栏样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 300px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: transparent;
+    color: var(--light-text);
+    font-size: 14px;
+}
+
+.search-box button {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    padding: 10px 15px;
+    border: none;
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.theme-toggle {
+    background: transparent;
+    color: var(--light-text);
+    font-size: 18px;
+}
+
+.login-btn, .register-btn {
+    padding: 8px 15px;
+    border-radius: 4px;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1px solid var(--light-text);
+}
+
+.register-btn {
+    background-color: var(--primary-color);
+}
+
+.user-avatar {
+    position: relative;
+}
+
+.user-avatar img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--card-bg);
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    width: 150px;
+    display: none;
+    z-index: 10;
+}
+
+.user-avatar:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: var(--light-text);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-menu a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--hover-bg);
+}
+
+.main-nav {
+    background-color: var(--darker-bg);
+    border-top: 1px solid var(--border-color);
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.main-nav li a {
+    display: block;
+    padding: 15px 20px;
+    font-weight: 500;
+    position: relative;
+}
+
+.main-nav li a.active::after,
+.main-nav li a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* 轮播区域样式 */
+.hero-slider {
+    position: relative;
+    height: 600px;
+    margin-top: 120px;
+    overflow: hidden;
+}
+
+.slider-container {
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-left: 100px;
+    padding-top: 150px;
+}
+
+.slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slide-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    transform: translateY(50%);
+}
+
+.slider-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--light-text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 电影区域样式 */
+.movie-section {
+    padding: 50px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.view-all {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+}
+
+.view-all i {
+    margin-left: 5px;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.movie-card {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-poster {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 2/3;
+}
+
+.movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+    transform: scale(1.05);
+}
+
+.movie-rating {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffd700;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hover-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    display: flex;
+    justify-content: space-between;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.movie-card:hover .hover-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-play, .btn-collect {
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.btn-play {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.btn-collect {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--light-text);
+}
+
+.movie-info {
+    padding: 15px;
+}
+
+.movie-info h3 {
+    font-size: 1rem;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-info p {
+    color: var(--gray-text);
+    font-size: 0.8rem;
+}
+
+.movie-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--dark-bg);
+}
+
+.movie-slider::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-slider::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+.movie-slider::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.movie-slider .movie-card {
+    flex: 0 0 200px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--darker-bg);
+    padding: 50px 0 20px;
+    margin-top: 50px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-logo img {
+    height: 40px;
+    margin-bottom: 15px;
+}
+
+.footer-logo p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.link-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: var(--light-text);
+}
+
+.link-group ul li {
+    margin-bottom: 10px;
+}
+
+.link-group ul li a {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.link-group ul li a:hover {
+    color: var(--primary-color);
+}
+
+.social-media h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: var(--card-bg);
+    border-radius: 50%;
+    color: var(--light-text);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+/* 电影详情页样式 */
+.movie-detail-container {
+    padding-top: 120px;
+    position: relative;
+}
+
+.movie-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center top;
+    filter: blur(10px) brightness(0.3);
+    z-index: -1;
+}
+
+.movie-detail-content {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0;
+}
+
+.movie-info-section {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.movie-info-section .movie-poster {
+    flex: 0 0 300px;
+    height: 450px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.movie-info-section .movie-poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--gray-text);
+}
+
+.movie-rating {
+    margin-bottom: 20px;
+}
+
+.rating-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.score {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffd700;
+}
+
+.rating-stars {
+    color: #ffd700;
+}
+
+.rating-count {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.movie-staff {
+    margin-bottom: 30px;
+}
+
+.movie-staff p {
+    margin-bottom: 10px;
+}
+
+.movie-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* 播放器区域样式 */
+.player-section {
+    margin-bottom: 50px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: var(--darker-bg);
+}
+
+.player-header h2 {
+    font-size: 1.3rem;
+}
+
+.player-sources {
+    display: flex;
+    gap: 10px;
+}
+
+.source-btn {
+    padding: 8px 15px;
+    background-color: var(--card-bg);
+    color: var(--gray-text);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.source-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.player-container {
+    padding: 20px;
+}
+
+.video-player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: #000;
+    margin-bottom: 15px;
+}
+
+.video-player video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.quality-selector, .playback-speed {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--gray-text);
+}
+
+.quality-selector select, .playback-speed select {
+    background-color: var(--darker-bg);
+    color: var(--light-text);
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* 剧情简介区域 */
+.plot-section {
+    margin-bottom: 50px;
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.plot-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.plot-content {
+    margin-bottom: 20px;
+}
+
+.plot-text {
+    max-height: 100px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.plot-text.expanded {
+    max-height: 1000px;
+}
+
+.btn-expand {
+    background-color: transparent;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.movie-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background-color: var(--darker-bg);
+    color: var(--gray-text);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* 相关推荐区域 */
+.related-section {
+    margin-bottom: 50px;
+}
+
+.related-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.related-movies {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.related-movies .movie-card {
+    flex: 0 0 180px;
+}
+
+/* 评论区域 */
+.comments-section {
+    background-color: var(--card-bg);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.comments-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.comment-form .user-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.comment-input {
+    flex: 1;
+}
+
+.comment-input textarea {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    background-color: var(--darker-bg);
+    border: none;
+    border-radius: 8px;
+    color: var(--light-text);
+    resize: none;
+    margin-bottom: 10px;
+}
+
+.comments-list {
+    margin-bottom: 30px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+}
+
+.comment-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-content {
+    flex: 1;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.comment-header h4 {
+    font-size: 1rem;
+}
+
+.comment-time {
+    color: var(--gray-text);
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.comment-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-like, .btn-reply {
+    background-color: transparent;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-like:hover, .btn-reply:hover {
+    color: var(--primary-color);
+}
+
+.replies {
+    margin-top: 20px;
+}
+
+.reply {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-btn {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--darker-bg);
+    color: var(--gray-text);
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.page-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.page-dots {
+    display: flex;
+    align-items: center;
+    color: var(--gray-text);
+}
+
+/* 黑暗模式切换 */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .main-nav {
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+body.light-mode .main-nav li a {
+    color: #333;
+}
+
+body.light-mode .search-box {
+    background-color: #eee;
+}
+
+body.light-mode .search-box input {
+    color: #333;
+}
+
+body.light-mode .movie-card {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .movie-info h3 {
+    color: #333;
+}
+
+body.light-mode .footer-content {
+    background-color: #fff;
+}
+
+body.light-mode .link-group h3 {
+    color: #333;
+}
+
+body.light-mode .social-icons a {
+    background-color: #eee;
+    color: #333;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-up {
+    animation: slideUp 0.5s ease forwards;
+}
